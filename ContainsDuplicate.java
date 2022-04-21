@@ -1,16 +1,15 @@
-
 import java.util.*;
 
 public class ContainsDuplicate{
 
  static boolean containsDuplicate(int[] nums) {
 
-    for(int i = 0; i < nums.length; i++) {
-        for(int j = i + 1; j < nums.length; j++) {
-            if(nums[i] == nums[j]) {
-                return true;
-            }
+    Set<Integer> distinct = new HashSet<Integer>();
+    for(int num : nums) {
+        if(distinct.contains(num)) {
+            return true;
         }
+        distinct.add(num);
     }
     return false;
 }
@@ -18,7 +17,8 @@ public class ContainsDuplicate{
 public static void main(String[] args){
         int arr[]={1,2,3,1};
 
-        containsDuplicate(arr);
+        boolean b=containsDuplicate(arr);
+        System.out.println(b);
 
 }
 
