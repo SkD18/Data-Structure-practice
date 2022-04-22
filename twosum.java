@@ -7,12 +7,12 @@ public class twosum {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) {
-            if (map.containsKey(target - numbers[i])) {
-                result[1] = i;
-                result[0] = map.get(target - numbers[i]);
+            if (map.containsKey(target - numbers[i])) { //if element:(target - elementOfArray) exist 
+                result[1] = i;                          //put the index of the other element in res[1]
+                result[0] = map.get(target - numbers[i]);//get the index(which is value here for the hashmap) of the first element of sum in res[0]
                 return result;
             }
-            map.put(numbers[i], i);
+            map.put(numbers[i], i); //putting the element of array and index to the hashmap
         }
         return result;
     }
