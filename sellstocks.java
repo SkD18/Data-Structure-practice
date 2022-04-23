@@ -2,10 +2,10 @@
 public class sellstocks{
 static int maxProfit(int[] prices) {
         
-    int min = Integer.MAX_VALUE, max = 0;
+    int min = Integer.MAX_VALUE, max = 0; 
   for (int price: prices) {
-      min = Math.min(min, price);
-      max = Math.max(price - min, max);
+      min = Math.min(min, price); //taking min value b/w the current price vs min value we found before in the same array
+      max = Math.max(price - min, max); //taking max of (price-min) vs max value 
   }
   return max;
 }
