@@ -1,6 +1,6 @@
 /* Java program to merge two
 sorted linked lists */
-import java.util.*;
+
 
 /* Link list node */
 class Node
